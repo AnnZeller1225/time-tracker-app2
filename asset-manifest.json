@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/time-tracker/static/css/main.6b8db9aa.chunk.css",
+    "main.js": "/time-tracker/static/js/main.6b635542.chunk.js",
+    "main.js.map": "/time-tracker/static/js/main.6b635542.chunk.js.map",
+    "runtime-main.js": "/time-tracker/static/js/runtime-main.591cc97a.js",
+    "runtime-main.js.map": "/time-tracker/static/js/runtime-main.591cc97a.js.map",
+    "static/js/2.4efe9ab7.chunk.js": "/time-tracker/static/js/2.4efe9ab7.chunk.js",
+    "static/js/2.4efe9ab7.chunk.js.map": "/time-tracker/static/js/2.4efe9ab7.chunk.js.map",
+    "index.html": "/time-tracker/index.html",
+    "precache-manifest.886b605233942c957a8e683101c60012.js": "/time-tracker/precache-manifest.886b605233942c957a8e683101c60012.js",
+    "service-worker.js": "/time-tracker/service-worker.js",
+    "static/css/main.6b8db9aa.chunk.css.map": "/time-tracker/static/css/main.6b8db9aa.chunk.css.map",
+    "static/js/2.4efe9ab7.chunk.js.LICENSE.txt": "/time-tracker/static/js/2.4efe9ab7.chunk.js.LICENSE.txt",
+    "static/media/app.css": "/time-tracker/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/Vector (Stroke).svg": "/time-tracker/static/media/Vector (Stroke).2786ee48.svg",
+    "static/media/play.svg": "/time-tracker/static/media/play.a2f51fff.svg",
+    "static/media/plus.svg": "/time-tracker/static/media/plus.079d28e6.svg",
+    "static/media/x.svg": "/time-tracker/static/media/x.138d4892.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.591cc97a.js",
+    "static/js/2.4efe9ab7.chunk.js",
+    "static/css/main.6b8db9aa.chunk.css",
+    "static/js/main.6b635542.chunk.js"
+  ]
+}
