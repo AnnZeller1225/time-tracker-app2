@@ -1,0 +1,51 @@
+ .content-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+ .content-top__mg {
+  margin-bottom: 52px;
+  margin-top: 52px;
+}
+.data-today {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: #F0F3F5;
+  padding: 16px 32px;
+  font-size: 18px;
+  line-height: 144.2%;
+  text-align: right;
+  font-variant: small-caps;
+  color: #3744BD;
+}
+/* .data-today__item:after {
+  content: url('../../img/cal.svg');
+  position: absolute;
+  top: -2px;
+  right: -25px;
+  border: 1px solid red;
+} */
+.filter {
+  width: 100%;
+  max-width: 176px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter-item {
+  padding: 15px 30px;
+  color: #BBBBBB;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144.2%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+.filter-item:hover {
+  background-color: #F0F3F5;
+  color: #4F4F4F;
+}

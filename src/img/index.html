@@ -1,0 +1,247 @@
+<html>
+<!-- Creation date: 11/26/2004 -->
+
+<head>
+	<title></title>
+	<meta name="Description" content="">
+	<meta name="Keywords" content="">
+	<meta name="Author" content="SNOOPY">
+	<meta name="Generator" content="AceHTML 4 Pro">
+	<style>
+		table.calendar {
+			border: none;
+			width: 200px
+		}
+
+		tr.calendar {
+			cursor: default;
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			height: 11px
+		}
+
+		th.calendar {
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			height: 20px;
+			border: 1px solid gray;
+			height: 16px;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#EAEAEA', endColorStr='#BBBBBB', gradientType='0')
+		}
+
+		td.calendar {
+			border: 1px dotted silver;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#DFDFDF', gradientType='0')
+		}
+
+		td.calendar_today {
+			border: 1px dotted silver;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#FFCC00', gradientType='0')
+		}
+
+		table.calendar_active {
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3399FF', gradientType='0')
+		}
+
+		table.calendar_button_0_1 {
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			border: 1px solid gray;
+			height: 16px;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3399FF', gradientType='0')
+		}
+
+		table.calendar_button_0_2 {
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3399FF', gradientType='0');
+			border-top: 1px solid gray;
+			border-bottom: 1px solid gray
+		}
+
+		table.calendar_button_1_2 {
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#FFCC00', gradientType='0');
+			border-top: 1px solid gray;
+			border-bottom: 1px solid gray
+		}
+
+		table.calendar_button_1_1 {
+			font: 11px;
+			font-family: arial;
+			text-align: center;
+			border: 1px solid gray;
+			height: 16px;
+			filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#FFCC00', gradientType='0')
+		}
+	</style>
+	<script>
+		//var args = window.dialogArguments;
+		var WeekTitles = new Array('S', 'M', 'T', 'W', 'T', 'F', 'S')
+
+		function showallweektitles() {
+			var i, answer = "  <tr>\n"
+			for (i = 0; i < WeekTitles.length; i++) answer += "    <th CLASS=\"calendar\">" + WeekTitles[i] + "</th>\n"
+			answer += "  </tr>\n"
+			return answer
+		}
+
+		function calendar_show(m, d, y) {
+			var sdate = new Date(m + '/1/' + y);
+			var mdate = new Date(m + '/' + d + '/' + y);
+			var todaydate = new Date();
+			var days = dayonmonth(m, y)
+			var iday = 0,
+				day, answer = ''
+			answer += '<table border=0 CLASS="calendar">'
+			answer += '  <tr CLASS="calendar">'
+			answer += '  	<th CLASS="calendar" colspan=7>'
+			answer += '		<table width="100%" border=0 cellpadding=0 cellspacing=0 height="100%">'
+			answer += '  			<tr CLASS="calendar">'
+			answer += '    			<td align="left"><b>Calendar</b></td>'
+			answer += '    			<td align="right">' + m + '/' + d + '/' + y + '</td>'
+			answer += '  			</tr>'
+			answer += '		</table>'
+			answer += '	</th>'
+			answer += '  </tr>'
+			answer += '  <tr CLASS="calendar">'
+			answer += '  	<th colspan=7>'
+			answer += '<table border=0 cellpadding=0 cellspacing=0 width="100%" height="100%">'
+			answer += '  <tr CLASS="calendar">'
+			answer += '    <td width="25%"><table onClick="calendar_move(\'-\',\'y\',' + m + ',' + d + ',' + y +
+				')" CLASS="calendar_button_0_1" onMouseOver="this.className=\'calendar_button_1_1\'" onMouseOut="this.className=\'calendar_button_0_1\'" border=0 cellpadding=0 cellspacing=0 width="100%" height="100%"><tr CLASS="calendar"><td><<</td></tr></table></td>'
+			answer += '    <td width="25%"><table onClick="calendar_move(\'-\',\'m\',' + m + ',' + d + ',' + y +
+				')" CLASS="calendar_button_0_2" onMouseOver="this.className=\'calendar_button_1_2\'" onMouseOut="this.className=\'calendar_button_0_2\'" border=0 cellpadding=0 cellspacing=0 width="100%" height="100%"><tr CLASS="calendar"><td><</td></tr></table></td>'
+			answer += '    <td width="25%"><table onClick="calendar_move(\'+\',\'m\',' + m + ',' + d + ',' + y +
+				')" CLASS="calendar_button_0_2" onMouseOver="this.className=\'calendar_button_1_2\'" onMouseOut="this.className=\'calendar_button_0_2\'" border=0 cellpadding=0 cellspacing=0 width="100%" height="100%"><tr CLASS="calendar"><td>></td></tr></table></td>'
+			answer += '    <td width="25%"><table onClick="calendar_move(\'+\',\'y\',' + m + ',' + d + ',' + y +
+				')" CLASS="calendar_button_0_1" onMouseOver="this.className=\'calendar_button_1_1\'" onMouseOut="this.className=\'calendar_button_0_1\'" border=0 cellpadding=0 cellspacing=0 width="100%" height="100%"><tr CLASS="calendar"><td>>></td></tr></table></td>'
+			answer += '  </tr>'
+			answer += '</table>'
+			answer += '	</th>'
+			answer += '  </tr>'
+			answer += '  <tr>'
+			answer += showallweektitles()
+			for (day = 0; day < sdate.getDay(); day++) {
+				iday++
+				answer += "    <td></td>"
+			}
+			for (day = 1; day <= days; day++) {
+				iday++
+				if ((todaydate.getMonth() + 1) == m && todaydate.getDate() == day && todaydate.getFullYear() == y)
+					answer += "    <td onClick=\"window.returnValue='" + m + "/" + day + "/" + y +
+					"';window.close()\" CLASS=\"calendar_today\"><table onMouseOver=\"this.className='calendar_active'\" onMouseOut=\"this.className=''\" border=0 cellpadding=0 cellspacing=0 width=\"100%\" height=\"100%\"><tr CLASS=\"calendar\"><td>" +
+					day + "</td></tr></table></td>"
+				else
+					answer += "    <td onClick=\"window.returnValue='" + m + "/" + day + "/" + y +
+					"';window.close()\" CLASS=\"calendar\"><table onMouseOver=\"this.className='calendar_active'\" onMouseOut=\"this.className=''\" border=0 cellpadding=0 cellspacing=0 width=\"100%\" height=\"100%\"><tr CLASS=\"calendar\"><td>" +
+					day + "</td></tr></table></td>"
+				if (iday == 7) {
+					answer += "</tr><tr>"
+					iday = 0
+				}
+			}
+			answer += "  </tr>"
+			answer += '</table>'
+			//self.calendar.innerHTML=answer
+			document.all.calendar.innerHTML = answer
+		}
+
+		function dayonmonth(m, y) { // �������, ��� ����������� ���������� ���� � ������
+			var answer
+			if (m != 2) { // ���� �� "�������"
+				var date1 = new Date(m + '/31/' + y)
+				var mm = (m < 12) ? (m + 1) : 1;
+				var yy = (m < 12) ? y : (y + 1);
+				var date2 = new Date(mm + '/1/' + yy)
+				answer = (date1.getDay() == date2.getDay()) ? '30' : '31';
+			} else {
+				var date1 = new Date(m + '/29/' + y)
+				var mm = (m < 12) ? (m + 1) : 1;
+				var yy = (m < 12) ? y : (y + 1);
+				var date2 = new Date(mm + '/1/' + yy)
+				answer = (date1.getDay() == date2.getDay()) ? '28' : '29';
+			}
+			return answer
+		}
+
+		function calendar_move(to, index, m, d, y) {
+			switch (to) {
+				case ('-'):
+					switch (index) {
+						case ('m'):
+							if (m > 1) {
+								m--
+							} else {
+								m = 1
+								y--
+							}
+							break
+						case ('d'):
+							var mm = (m > 1) ? --m : 1
+							var yy = (m > 1) ? y : --y
+							var days = dayonmonth(mm, yy)
+							if (d > 1) {
+								d--
+							} else {
+								d = days
+								m = mm
+								y = yy
+							}
+							break
+						case ('y'):
+							y--
+							break
+					}
+					break
+				case ('+'):
+					switch (index) {
+						case ('m'):
+							if (m < 12) {
+								m++
+							} else {
+								m = 1
+								y++
+							}
+							break
+						case ('d'):
+							var mm = (m < 12) ? ++m : 1
+							var yy = (m < 12) ? y : ++y
+							var days = dayonmonth(m, y)
+							if (d < days) {
+								d++
+							} else {
+								d = 1
+								m = mm
+								y = yy
+							}
+							break
+						case ('y'):
+							y++
+							break
+					}
+					break
+			}
+			calendar_show(m, d, y)
+		}
+	</script>
+</head>
+
+<body>
+	<div id="calendar"></div>
+	<script>
+		calendar_show(11, 29, 2004)
+	</script>
+
+
+	<center><a href="http://aceweb.ru" target="_blank"><img src="ace.gif" alt="web ���������" width=88 height=31
+				border=0></a></center>
+</body>
+
+</html>

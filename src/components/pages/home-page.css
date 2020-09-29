@@ -1,0 +1,21 @@
+.main-content {
+    width: 100%;
+    max-width: 1140px;
+    /* border: 1px solid #88ff00; */
+    padding-right: 25px;
+    margin: 0px auto;
+    padding-left: 10px;
+}
+.content-wrap {
+  /* @media (min-width: 1800px) {
+    .width(1770px);
+  }
+
+  @media (max-width: 1800px) {
+    .width(1300px);
+  } */
+background-color: #F9FAFC;
+  display: flex;
+  justify-content: space-between;
+
+}

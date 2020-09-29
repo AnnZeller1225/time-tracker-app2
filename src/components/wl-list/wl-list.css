@@ -1,0 +1,26 @@
+.empty {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 144.2%;
+  color: #1e1e1e;
+}
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  padding: 13px;
+  max-width: 50px;
+  width: 100%;
+}
+.cart-content {
+  border-top: 1px solid #e9ecf2;
+}
+.cart-day {
+  margin: 0 auto;
+}

@@ -1,0 +1,60 @@
+a {
+  text-decoration: none;
+}
+/* реадер начался */
+
+.header-wrap {
+  background-color: #3744BD;
+}
+.top-menu_mg {
+  margin: 0px auto;
+}
+.top-menu {
+  padding: 36px 30px 2px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 1800px) {
+  .top-menu {
+    width: 100%;
+    max-width: 1770px;
+  }
+}
+@media (max-width: 1800px) {
+  .top-menu {
+    width: 100%;
+    max-width: 1300px;
+  }
+}
+.top-menu-links,
+.top-menu-user {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.top-menu .top-menu-links__link {
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 18px;
+  padding-bottom: 29px;
+}
+.top-menu .top-menu-links__link:hover {
+  padding-bottom: 26px;
+  border-bottom: 3px solid #FFFFFF;
+}
+.top-menu .top-menu-user {
+  padding-right: 80px;
+  width: 100%;
+  max-width: 250px;
+  align-items: flex-start;
+  position: relative;
+}
+.top-menu .top-menu-user:after {
+  content: url('./avatar.png');
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
